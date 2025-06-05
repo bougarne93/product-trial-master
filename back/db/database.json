@@ -1,0 +1,13 @@
+{
+  "products": [],
+  "users": [
+    {
+      "username": "admin",
+      "firstname": "Mohamed",
+      "email": "admin@admin.com",
+      "password": "123456"
+    }
+  ],
+  "carts": {},
+  "wishlists": {}
+}

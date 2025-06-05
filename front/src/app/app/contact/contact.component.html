@@ -1,0 +1,11 @@
+<h2>Contact Us</h2>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+  <label>Email:
+    <input name="email" [(ngModel)]="email" required email />
+  </label><br/>
+  <label>Message:
+    <textarea name="message" [(ngModel)]="message" required maxlength="300"></textarea>
+  </label><br/>
+  <button type="submit" [disabled]="!contactForm.valid">Send</button>
+</form>
+<p *ngIf="sent">Demande de contact envoyée avec succès.</p>
