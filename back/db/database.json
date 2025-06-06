@@ -1,7 +1,25 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "code": "P001",
+      "name": "Produit Test",
+      "description": "Ceci est un produit test",
+      "image": "image.jpg",
+      "category": "test",
+      "price": 99.99,
+      "quantity": 10,
+      "internalReference": "INT-001",
+      "shellId": 1,
+      "inventoryStatus": "INSTOCK",
+      "rating": 5,
+      "createdAt": 1717612345,
+      "updatedAt": 1717612345
+    }
+  ],
   "users": [
     {
+      "id": 1,
       "username": "admin",
       "firstname": "Mohamed",
       "email": "admin@admin.com",
