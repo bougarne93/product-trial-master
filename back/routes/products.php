@@ -12,7 +12,7 @@ if (preg_match('#^/products(?:/([0-9]+))?$#', $uri, $matches)) {
 
     if ($method === 'GET') {
         $headers = getallheaders();
-        $token = isset($headers['Authorization']) ? str_replace('Bearer ', '', $headers['Authorization']) : '';
+        $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';
         $user_email = Auth::verifyJWT($token);
 
         if (!$user_email) {
@@ -36,7 +36,7 @@ if (preg_match('#^/products(?:/([0-9]+))?$#', $uri, $matches)) {
 
     } elseif ($method === 'POST') {
         $headers = getallheaders();
-        $token = isset($headers['Authorization']) ? str_replace('Bearer ', '', $headers['Authorization']) : '';
+        $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';
         $user_email = Auth::verifyJWT($token);
         if (!$user_email || $user_email !== 'admin@admin.com') {
             http_response_code(403);
@@ -54,7 +54,7 @@ if (preg_match('#^/products(?:/([0-9]+))?$#', $uri, $matches)) {
 
     } elseif ($method === 'PATCH' && $id !== null) {
         $headers = getallheaders();
-        $token = isset($headers['Authorization']) ? str_replace('Bearer ', '', $headers['Authorization']) : '';
+        $token = isset($headers['Authorization']) ? $headers['Authorization'] : '';
         $user_email = Auth::verifyJWT($token);
         if (!$user_email || $user_email !== 'admin@admin.com') {
             http_response_code(403);
